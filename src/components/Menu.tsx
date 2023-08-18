@@ -44,7 +44,8 @@ const Menu: React.FC = () => {
       <ul className = 'menuItems'>
         <li> בית </li>
         <li> תפריט</li>
-        <li> אודות </li>
+        <li> אודות</li>
+        <li> קצת עלי </li>
         <li> צור קשר </li>
       </ul>
     </div>

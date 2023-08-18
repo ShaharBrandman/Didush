@@ -7,7 +7,7 @@ import React, { useRef, useState, useEffect } from 'react';
 
 const VideoPlayer: React.FC = () => {
     const videoRef = useRef<HTMLVideoElement | null>(null);
-    const [isMuted, setIsMuted] = useState(false);
+    const [isMuted, setIsMuted] = useState(true);
     const [isPlaying, setPlaying] = useState(false);
     const [currentTime, setCurrentTime] = useState(0);
 
@@ -17,9 +17,6 @@ const VideoPlayer: React.FC = () => {
         if (videoRef.current) {
             //perform a not on the mute variable
             setIsMuted(!isMuted);
-            videoRef.current.muted = isMuted;
-            //videoRef.current.muted = !videoRef.current.muted;
-            //setIsMuted(videoRef.current.muted);
         }
     };
 
@@ -49,8 +46,6 @@ const VideoPlayer: React.FC = () => {
         if (videoRef.current) {
             if (isPlaying) {
                 //update muting mechanism
-                videoRef.current.muted = isMuted;
-
                 //pause the video and update the state
                 videoRef.current.pause();
                 setPlaying(false);
@@ -73,7 +68,7 @@ const VideoPlayer: React.FC = () => {
 
     return (
         <div className = 'videoPlayerContainer'>
-            <video ref = {videoRef} className = 'videoPlayer' controls = {false} muted = {true}>
+            <video ref = {videoRef} className = 'videoPlayer' controls = {false} muted = {isMuted}>
                 <source
                 src = 'https://www.w3schools.com/html/mov_bbb.mp4'
                 type = "video/mp4"
@@ -94,7 +89,7 @@ const VideoPlayer: React.FC = () => {
                     value={currentTime}
                 />
                 <button className = 'muteButton' onClick = {handleToggleMute}>
-                    { isMuted  ? 'Mute' : 'unMute'}
+                    { isMuted  ? '+' : '-'}
                 </button>
             </div>
         </div>

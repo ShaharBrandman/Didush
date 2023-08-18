@@ -53,6 +53,7 @@ header {
 
 .videoPlayerContainer {
     display: flex;
+    margin: 50px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -66,5 +67,83 @@ header {
 
 .videoCustomControls {
     display: flex;
-    align-items: grid;
+    align-items: center;
+}
+
+.AboutUsSection{
+    padding: 125px;
+    margin: 50px;
+    background-color: lightblue;
+    align-items: center;
+}
+
+
+.AboutUsSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.AboutHeaderBig {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.AboutHeaderSmall {
+    margin-bottom: 20px;
+}
+
+.AboutHeaderSmall h2 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.AboutHeaderSmall strong {
+    color: black;
+}
+
+.AboutHeaderSmall span {
+    color: #333;
+    margin: 0 5px;
+}
+
+.AboutDetails {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.AboutDetails.zoomed {
+    transform: scale(1.2);
+}
+
+.AboutUsImage {
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 15%;
+    transition: transform 0.3s;
+    flex: 1;
+    max-width: 450px;
+    display: inline-block;
+    text-align: center;
+}
+
+.AboutUsImage img {
+    margin: 5px;
+    width: 100%;
+    height: auto;
+}
+
+.AboutUsImage:hover {
+    transform: scale(1.1);
 }
